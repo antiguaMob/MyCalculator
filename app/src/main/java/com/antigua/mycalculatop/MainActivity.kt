@@ -17,8 +17,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val infix = "20 +3*2(2-4)"
-            val result = InfixToPostFix().postFixConversion(infix)
+            val infix = "20 +3*2*(2-4)"
+            val result = Model().result(infix)
             Log.i("Calculator","The postFix is : $result")
             MyCalculatopTheme {
                 // A surface container using the 'background' color from the theme
