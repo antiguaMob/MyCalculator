@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -14,6 +15,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.antigua.mycalculatop.ui.theme.MyCalculatopTheme
 
 class MainActivity : ComponentActivity() {
+    val viewModel by viewModels<CalculatorViewModel>()
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -26,7 +29,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                   HomeCalculator(calculatorViewModel = viewModel)
                 }
             }
         }

@@ -96,8 +96,8 @@ class Model{
             return postFix
         }
         return  try {
-            val evalution = ArithmeticalEvaluation().evaluation(postFix)
-            evalution.toString()
+            val evolution = ArithmeticalEvaluation().evaluation(postFix)
+            evolution.toString()
         } catch (e:Exception){
             e.printStackTrace()
             "Error"
